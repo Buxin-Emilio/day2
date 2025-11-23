@@ -49,16 +49,18 @@
         /* 电脑大屏时完全隐藏这个按钮 */
         font-size: 24px;
         cursor: pointer;
+        /* 当鼠标悬停在这个元素上时，鼠标指针变成“小手”形状 */
       }
       @media (max-width: 900px) {
         #menu-toggle {
           display: block;
         }
       }
+      /* 换成小屏幕的时候，就显示成菜单按钮 */
 
       /* 主容器 */
       .container {
-        margin-top: 60px;
+        margin-top: 60px; /*外边距 */
         min-height: calc(100vh - 60px);
         display: flex;
       }
@@ -92,21 +94,26 @@
         color: #555;
         text-decoration: none;
         transition: all 0.3s;
+        /* 平滑过渡动画 */
         border-left: 3px solid transparent;
       }
       .sidebar a:hover,
       .sidebar a.active {
         background: #f0f7ff;
-        color: #409eff;
+        color: #edaa66;
         border-left-color: #409eff;
         font-weight: 500;
       }
+      /* 设置鼠标点击，悬停在链接上的时的动画效果 */
 
       /* ==================== 右侧内容区 ==================== */
       .main-content {
         flex: 1;
+        /* 因为它的父容器 .container 已经设置了 display: flex;，所以这里 flex: 1 的意思是：
+“我（主内容区）要占满剩余的所有宽度和高度”
+即使侧边栏宽度变了（比如收起成 64px），主内容区也会自动撑满，不会出现空白。 */
         padding: 30px 20px;
-        margin-left: 260px; /* 默认电脑端留出左侧宽度 */
+        margin-left: 260px; /* 默认电脑端留出左侧宽度，左侧侧边栏默认宽度就是 260px，为了隔开 */
         transition: margin-left 0.3s ease;
       }
 
@@ -203,11 +210,11 @@
   <body>
     <header>
       <div id="menu-toggle">Menu</div>
-      <h1>极客数码商城</h1>
+      <h1>商城</h1>
       <div></div>
       <!-- 占位 -->
     </header>
-
+    <!-- 头部直接用header就可以了，下方内容部分，先div，然后div里面放aside侧边栏-->
     <div class="container">
       <!-- 左侧固定/抽屉式导航 -->
       <aside class="sidebar" id="sidebar">
@@ -219,6 +226,7 @@
           <li><a href="#accessories">数码配件</a></li>
           <li><a href="#smart-home">智能家居</a></li>
           <li><a href="#wearable">可穿戴设备</a></li>
+          <li><a href="#vegetables">蔬菜</a></li>
         </ul>
       </aside>
 
@@ -226,13 +234,14 @@
       <main class="main-content">
         <!-- 这里放你的商品，结构和之前一样 -->
         <div id="phones" class="category">手机平板</div>
+        <!-- 某一大类的商品标题，包含这系列商品 -->
         <div class="product-grid">
+          <!-- 容纳这一类商品的大方块 -->
           <div class="product-card">
-            <img
-              src="https://img14.360buyimg.com/n7/jfs/t1/143465/14/3438/106965/5f1f9c5eE8c3b3c1d/80e4e6d1f5b5e6e4.jpg"
-              alt="iPhone 15 Pro"
-            />
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
             <div class="product-info">
+              <!-- 商品信息独占一块 -->
               <h3>iPhone 15 Pro Max</h3>
               <div class="price">
                 ¥8999 <span class="old-price">¥9999</span>
@@ -240,10 +249,7 @@
             </div>
           </div>
           <div class="product-card">
-            <img
-              src="https://img11.360buyimg.com/n7/jfs/t1/199173/26/21829/89652/6259c4e3E3d2f1c0d/9e8f5a9b5d5e5d5e.jpg"
-              alt="小米14"
-            />
+            <img src="/day02.a/image/3.jpg" alt="小米14" />
             <div class="product-info">
               <h3>小米 14 Pro</h3>
               <div class="price">¥4999</div>
@@ -254,12 +260,192 @@
 
         <div id="laptops" class="category">笔记本电脑</div>
         <div class="product-grid">
+          <div class="product-card">
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
+            <div class="product-info">
+              <!-- 商品信息独占一块 -->
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price">
+                ¥8999 <span class="old-price">¥9999</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
+            <div class="product-info">
+              <!-- 商品信息独占一块 -->
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price">
+                ¥8999 <span class="old-price">¥9999</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
+            <div class="product-info">
+              <!-- 商品信息独占一块 -->
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price">
+                ¥8999 <span class="old-price">¥9999</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
+            <div class="product-info">
+              <!-- 商品信息独占一块 -->
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price">
+                ¥8999 <span class="old-price">¥9999</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
+            <div class="product-info">
+              <!-- 商品信息独占一块 -->
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price">
+                ¥8999 <span class="old-price">¥9999</span>
+              </div>
+            </div>
+          </div>
           <!-- 商品卡片 -->
         </div>
 
         <div id="audio" class="category">耳机音箱</div>
+
         <div class="product-grid">
           <!-- 商品卡片 -->
+          <div class="product-card">
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
+            <div class="product-info">
+              <!-- 商品信息独占一块 -->
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price">
+                ¥8999 <span class="old-price">¥9999</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
+            <div class="product-info">
+              <!-- 商品信息独占一块 -->
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price">
+                ¥8999 <span class="old-price">¥9999</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
+            <div class="product-info">
+              <!-- 商品信息独占一块 -->
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price">
+                ¥8999 <span class="old-price">¥9999</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
+            <div class="product-info">
+              <!-- 商品信息独占一块 -->
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price">
+                ¥8999 <span class="old-price">¥9999</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
+            <div class="product-info">
+              <!-- 商品信息独占一块 -->
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price">
+                ¥8999 <span class="old-price">¥9999</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
+            <div class="product-info">
+              <!-- 商品信息独占一块 -->
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price">
+                ¥8999 <span class="old-price">¥9999</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
+            <div class="product-info">
+              <!-- 商品信息独占一块 -->
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price">
+                ¥8999 <span class="old-price">¥9999</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
+            <div class="product-info">
+              <!-- 商品信息独占一块 -->
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price">
+                ¥8999 <span class="old-price">¥9999</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
+            <div class="product-info">
+              <!-- 商品信息独占一块 -->
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price">
+                ¥8999 <span class="old-price">¥9999</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="vegetables" class="category">蔬菜</div>
+        <!-- 某一大类的商品标题，包含这系列商品 -->
+        <div class="product-grid">
+          <!-- 容纳这一类商品的大方块 -->
+          <div class="product-card">
+            <!-- 单个商品的小方块 -->
+            <img src="/day02.a/image/1.jpg" alt="iPhone 15 Pro" />
+            <div class="product-info">
+              <!-- 商品信息独占一块 -->
+              <h3>iPhone 15 Pro Max</h3>
+              <div class="price">
+                ¥8999 <span class="old-price">¥9999</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="/day02.a/image/3.jpg" alt="小米14" />
+            <div class="product-info">
+              <h3>小米 14 Pro</h3>
+              <div class="price">¥4999</div>
+            </div>
+          </div>
+          <!-- 更多商品... -->
         </div>
 
         <!-- 其他分类同理... -->
